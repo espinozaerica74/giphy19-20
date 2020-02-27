@@ -1,6 +1,6 @@
 /* global $ */
 
-console.log('hi');
+console.log('data');
 
 $('button').click(function(){
   fetch("https://api.giphy.com/v1/gifs/search?rating=pg&api_key=dc6zaTOxFJmzC&q=puppy")
@@ -9,8 +9,9 @@ $('button').click(function(){
   })
   .then(function(data) {
         // function body
-        console.log(data);
-
+        console.log(data.data[0].images.original.url);
+        var originalLink= data.data[0].images.original.url;
+        
         });
       
 
